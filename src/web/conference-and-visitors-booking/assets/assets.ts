@@ -1,17 +1,9 @@
-import people from './images/people.jpg';
-import icon from './images/icon.svg';
-import conferenceImage from './images/conference.jpg';
-import smartspaceLogo from './images/smartspace-logo.png';
-import conferenceRoomA from './images/conferenceRoomA.jpg';
-import clipboard1 from './images/clipboard1.png';
-import clipboard2 from './images/clipboard2.png';
-
 export const ASSETS = {
-  conferenceImage,
-  people,
-  icon,
-  smartspaceLogo,
-  conferenceRoomA,
-  clipboard1,
-  clipboard2,
+  smartspaceLogo: require("./images/smartspace-logo.png"),
+  conferenceImage: require("./images/conference.jpg"),
+  people: require("./images/people.jpg"),
+  icon: require("./images/icon.svg"),
+  conferenceRoomA: require("./images/conferenceRoomA.jpg"),
+  clipboard1: require("./images/clipboard1.png"),
+  clipboard2: require("./images/clipboard2.png"),
 };
