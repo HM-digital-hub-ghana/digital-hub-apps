@@ -1,5 +1,4 @@
-import { ASSETS } from "@/assets/assets";
-
+import { ASSETS } from "src/web/conference-and-visitors-booking/assets/assets";
 export default function Logo() {
   return (
     <div className="flex items-center gap-2">
