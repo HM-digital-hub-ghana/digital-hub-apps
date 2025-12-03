@@ -1,13 +1,13 @@
 import { Funnel, Search } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import VisitorRequestForm from "@/components/VisitorRequestForm";
-import { Button } from "@/components/ui/button";
-import { EmptyState } from "@/components/empty-state";
-import type { Visitor, TableHeader } from "@/components/visitor-table";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { VisitorsTable } from "@/components/visitor-table";
+import { Input } from "@web/components/ui/input";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@web/components/ui/dialog";
+import VisitorRequestForm from "@web/components/VisitorRequestForm";
+import { Button } from "@web/components/ui/button";
+import { EmptyState } from "@web/components/empty-state";
+import type { Visitor, TableHeader } from "@web/components/visitor-table";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@web/components/ui/select";
+import { VisitorsTable } from "@web/components/visitor-table";
 import AdminVisitorsManagement from "../admin/admin-visitor-management";
 import { useAuth } from "../../contexts/AuthContext";
 import {

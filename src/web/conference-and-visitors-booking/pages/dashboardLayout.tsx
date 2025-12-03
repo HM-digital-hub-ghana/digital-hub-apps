@@ -1,16 +1,16 @@
-import { AppSidebar } from "@/components/app-sidebar";
-import ChatForm from "@/components/ChatForm";
-import NotificationsPopover from "@/components/NotificationsPopover";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
+import { AppSidebar } from "@web/components/app-sidebar";
+import ChatForm from "@web/components/ChatForm";
+import NotificationsPopover from "@web/components/NotificationsPopover";
+import { Avatar, AvatarFallback, AvatarImage } from "@web/components/ui/avatar";
+import { Button } from "@web/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+} from "@web/components/ui/dropdown-menu";
+import { Input } from "@web/components/ui/input";
+import { SidebarProvider, SidebarTrigger } from "@web/components/ui/sidebar";
 import { ChevronDown, Loader2, Menu, Search } from "lucide-react";
 import { type ReactNode, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
@@ -135,7 +135,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                         e.preventDefault();
                         if (!isLoggingOut) {
                           console.log("[TopBar] Logout button clicked");
-                          logout({ redirectTo: "/login", navigate });
+                          logout({ redirectTo: "/conference-booking", navigate });
                         }
                       }}
                       disabled={isLoggingOut}

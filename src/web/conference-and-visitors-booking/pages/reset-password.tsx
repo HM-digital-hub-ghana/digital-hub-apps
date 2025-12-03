@@ -10,14 +10,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from "@web/components/ui/form";
+import { Input } from "@web/components/ui/input";
 import { apiResetPassword } from "../service/auths";
-import { Button } from "@/components/ui/button";
+import { Button } from "@web/components/ui/button";
 import { Eye, EyeOff } from "lucide-react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Logo from "@/components/logo";
+import Logo from "@web/components/logo";
 import { routes } from "../constants/routes";
 
 const passwordSchema = z
