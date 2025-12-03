@@ -1,6 +1,4 @@
 // Custom Babel plugin to replace import.meta.hot with undefined for Metro compatibility
-// React Router uses import.meta.hot which is Vite-specific HMR feature
-// Since Metro doesn't support this, we replace it with undefined
 module.exports = function () {
   return {
     visitor: {
@@ -15,7 +13,6 @@ module.exports = function () {
           path.node.object.property.name === 'meta'
         ) {
           // Replace import.meta.hot (or any import.meta.*) with undefined
-          // This is safe since Metro doesn't support Vite's HMR anyway
           path.replaceWithSourceString('undefined');
         }
       },
