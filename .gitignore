@@ -39,3 +39,7 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+/MIGRATION_CHECKLIST.md
+/MIGRATION_PLAN.md
+.env
+.env

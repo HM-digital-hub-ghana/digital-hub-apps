@@ -11,8 +11,7 @@ config.resolver.alias = {
   '@shared': __dirname + '/src/shared',
   // Force react-day-picker to use CommonJS build for Metro compatibility
   'react-day-picker': path.resolve(__dirname, 'node_modules/react-day-picker/dist/cjs/index.js'),
-  // Note: react-router-dom and react-router/dom are handled by custom resolver
-  // to support platform-specific mocks (native) vs real implementation (web)
+  //react-router-dom and react-router/dom are handled by custom resolver to support platform-specific mocks (native) vs real implementation (web)
 };
 
 // Configure Metro to handle ESM packages (like Radix UI and react-day-picker)
@@ -28,7 +27,6 @@ if (config.resolver.assetExts.includes('mjs')) {
 config.resolver.resolverMainFields = ['react-native', 'browser', 'main'];
 
 // Configure Metro to transpile React Router which uses import.meta.hot
-// Metro needs to transpile node_modules packages that use ESM features
 config.transformer = {
   ...config.transformer,
   getTransformOptions: async () => ({
@@ -39,13 +37,12 @@ config.transformer = {
   }),
 };
 
-// Tell Metro to apply Babel transformations to react-router-dom
-// This ensures import.meta.hot gets transformed
+// configure Metro to apply Babel transformations to react-router-dom - to transform import.meta
 config.serializer = {
   ...config.serializer,
 };
 
-// Disable package exports - we use aliases instead to avoid import.meta issues
+//disable package exports and use aliases to avoid import.meta issues
 // The alias above maps react-router/dom to the actual file
 config.resolver.unstable_enablePackageExports = false;
 
