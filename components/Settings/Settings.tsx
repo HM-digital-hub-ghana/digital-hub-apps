@@ -89,7 +89,7 @@ export default function Settings() {
           type="button"
           onClick={() => {
             if (!isLoggingOut) {
-              logout({ redirectTo: "/login", navigate });
+              logout({ redirectTo: "/conference-booking", navigate });
             }
           }}
           disabled={isLoggingOut}
