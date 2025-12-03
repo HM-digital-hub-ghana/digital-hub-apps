@@ -9,16 +9,16 @@ const ParentRoute = () => {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          {/* Landing page - shows project selection */}
+          {/* Landing page*/}
           <Route path="/" element={<HomePage />} />
           
-          {/* Conference booking app (Smartspace) */}
+          {/* Conference booking app (Smartspace)*/}
           <Route
             path="/conference-booking/*"
             element={<ConferenceBookingRoutes />}
           />
           
-          {/* HM Clockr - Coming Soon */}
+          {/* HM Clockr*/}
           {/* 
           <Route
             path="/hm-clockr/*"
@@ -26,7 +26,7 @@ const ParentRoute = () => {
           />
           */}
           
-          {/* Complaints & Feedback - Coming Soon */}
+          {/* Complaints & Feedback*/}
           {/* 
           <Route
             path="/complaints-feedback/*"
