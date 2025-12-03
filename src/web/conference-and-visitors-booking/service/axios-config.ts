@@ -1,9 +1,8 @@
 import axios, { AxiosError, type InternalAxiosRequestConfig } from "axios";
 import { navigate } from "@/lib/navigation";
-import { apiRefreshToken } from "./auths";
-import { routes } from "@/constants/routes";
+import { routes } from "../constants/routes";
 
-export const baseUrl = import.meta.env.VITE_API_URL;
+export const baseUrl = process.env.EXPO_PUBLIC_API_URL
 
 let isRefreshing = false;
 let failedQueue: Array<{
@@ -129,7 +128,13 @@ apiClient.interceptors.response.use(
           url: `${baseUrl}/auth/refresh`,
         });
         
-        const response = await apiRefreshToken();
+        const response = await apiClient.post(
+          "auth/refresh",
+          {},
+          {
+            withCredentials: true, // Ensure httpOnly cookies are sent
+          }
+        );
         console.log("[Axios] Refresh response:", {
           status: response.status,
           data: response.data,
