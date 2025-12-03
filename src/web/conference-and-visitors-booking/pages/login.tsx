@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@web/components/ui/button";
+import { Input } from "@web/components/ui/input";
 import {
   Form,
   FormControl,
@@ -9,13 +9,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { MarketingPanel } from "@/components/MarketingPanel";
+} from "@web/components/ui/form";
+import { MarketingPanel } from "@web/components/MarketingPanel";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link} from "react-router-dom";
 import { routes } from "../constants/routes";
-import Logo from "@/components/logo";
+import Logo from "@web/components/logo";
 import { apiLogin } from "../service/auths";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -94,7 +94,7 @@ export default function LoginPage() {
 
      // Redirect to 'from' if present, else dashboard
      const state = location.state as { from?: { pathname: string } } | null;
-     const from = state?.from?.pathname ?? "/dashboard";
+     const from = state?.from?.pathname ?? routes.dashboard;
      navigate(from, { replace: true });
    } catch (error: unknown) {
      const errorMessage = handleApiError(

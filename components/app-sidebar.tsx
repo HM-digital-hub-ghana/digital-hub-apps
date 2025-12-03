@@ -101,7 +101,7 @@ export function AppSidebar() {
           e.preventDefault();
           if (!isLoggingOut) {
             console.log("[Sidebar] Logout button clicked");
-            logout({ redirectTo: "/login", navigate });
+            logout({ redirectTo: "conference-booking", navigate });
           }
         }}
         className={`h-12 flex items-center rounded-md transition-all duration-200 ease-in-out font-medium overflow-hidden ${

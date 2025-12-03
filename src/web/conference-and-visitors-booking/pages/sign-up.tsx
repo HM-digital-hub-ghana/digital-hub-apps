@@ -10,18 +10,18 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
+} from "@web/components/ui/form";
+import { Input } from "@web/components/ui/input";
+import { Button } from "@web/components/ui/button";
+import { Checkbox } from "@web/components/ui/checkbox";
 import { Eye, EyeOff } from "lucide-react";
-import Logo from "@/components/logo";
+import Logo from "@web/components/logo";
 import toast from "react-hot-toast";
-import { apiRegister } from "@/service/auths";
+import { apiRegister } from "@web/conference-and-visitors-booking/service/auths";
 import { handleApiError } from "@/lib/utils";
-import { routes } from "@/constants/routes";
-import TermsFormDialog from "@/components/TermsForm";
-import { MarketingPanel } from "@/components/MarketingPanel";
+import { routes } from "../constants/routes";
+import TermsFormDialog from "@web/components/TermsForm";
+import { MarketingPanel } from "@web/components/MarketingPanel";
 
 // Zod schema
 const passwordSchema = z.object({
@@ -64,7 +64,7 @@ export default function SignUpForm() {
     try {
       await apiRegister(data);
       toast.success("Registration successful!");
-      navigate("/login");
+      navigate(routes.login);
     } catch (error: unknown) {
       toast.error(
         handleApiError(error, "Registration failed", "SignUpForm.onSubmit")
