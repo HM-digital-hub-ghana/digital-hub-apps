@@ -10,12 +10,12 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+} from "@web/components/ui/form";
+import { Input } from "@web/components/ui/input";
+import { Button } from "@web/components/ui/button";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Logo from "@/components/logo";
+import Logo from "@web/components/logo";
 import { useLocation } from "react-router-dom";
 
 const emailSchema = z.object({

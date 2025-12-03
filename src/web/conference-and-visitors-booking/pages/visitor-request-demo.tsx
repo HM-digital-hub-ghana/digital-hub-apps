@@ -1,5 +1,5 @@
 
-import VisitorRequestForm from "@/components/VisitorRequestForm"
+import VisitorRequestForm from "@web/components/VisitorRequestForm"
 
 export default function VisitorRequestDemo() {
   const handleSubmit = (data: any) => {

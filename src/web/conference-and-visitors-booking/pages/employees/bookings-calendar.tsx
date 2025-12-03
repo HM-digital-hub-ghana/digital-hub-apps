@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import type { FilterState } from "@/components/AdminComponents/AdminFilter";
+import type { FilterState } from "@web/components/AdminComponents/AdminFilter";
 import { useDebounce } from "../../hooks/useDebounce";
 import { searchBookings } from "@/lib/search";
 import {
@@ -10,21 +10,21 @@ import {
   ChevronRight,
   Plus,
 } from "lucide-react";
-import WeekCalendar from "@/components/calendarWeek";
-import DayCalendar from "@/components/dayCalendar";
-import MonthCalendar from "@/components/monthCalendar";
-import MyBooking from "@/components/MyBooking";
-import CalendarListView from "@/components/CalendarListView";
-import { BookingForm } from "@/components/BookingForm";
+import WeekCalendar from "@web/components/calendarWeek";
+import DayCalendar from "@web/components/dayCalendar";
+import MonthCalendar from "@web/components/monthCalendar";
+import MyBooking from "@web/components/MyBooking";
+import CalendarListView from "@web/components/CalendarListView";
+import { BookingForm } from "@web/components/BookingForm";
 import {
   Dialog,
   DialogContent,
   DialogTrigger,
   DialogTitle,
   DialogDescription,
-} from "@/components/ui/dialog";
-import AdminNavigation from "@/components/AdminComponents/AdminNavigation";
-import AdminStatus from "@/components/AdminComponents/AdminStatus";
+} from "@web/components/ui/dialog";
+import AdminNavigation from "@web/components/AdminComponents/AdminNavigation";
+import AdminStatus from "@web/components/AdminComponents/AdminStatus";
 import { useAuth } from "../../contexts/AuthContext";
 import { apiGetAllBookings, apiGetRooms, apiGetEmployees, apiCancelBooking, type Booking, type Room, type Employee } from "../../service/bookings";
 import toast from "react-hot-toast";

@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import { ActiveBookings } from "@/components/AdminComponents/activeBooking";
-import { ActivityFeed } from "@/components/AdminComponents/activityFeed";
-import { EmployeesChart } from "@/components/AdminComponents/employeeChart";
-import { QuickActions } from "@/components/AdminComponents/quickAction";
-import { VisitorOverview } from "@/components/AdminComponents/visitorOverView";
-import { StatsCard } from "@/components/status-card";
+import { ActiveBookings } from "@web/components/AdminComponents/activeBooking";
+import { ActivityFeed } from "@web/components/AdminComponents/activityFeed";
+import { EmployeesChart } from "@web/components/AdminComponents/employeeChart";
+import { QuickActions } from "@web/components/AdminComponents/quickAction";
+import { VisitorOverview } from "@web/components/AdminComponents/visitorOverView";
+import { StatsCard } from "@web/components/status-card";
 import {
   Users,
   DoorClosed,
   Calendar,
   Clock,
 } from "lucide-react";
-import { apiGetPendingVisits } from "@/service/visitors";
-import { apiGetAllBookings, apiGetRooms } from "@/service/bookings";
-import { apiGetAllVisitors } from "@/service/visitors";
+import { apiGetPendingVisits } from "@web/conference-and-visitors-booking/service/visitors";
+import { apiGetAllBookings, apiGetRooms } from "@web/conference-and-visitors-booking/service/bookings";
+import { apiGetAllVisitors } from "@web/conference-and-visitors-booking/service/visitors";
 import {
   getActiveMeetings,
   getRoomsAvailable,

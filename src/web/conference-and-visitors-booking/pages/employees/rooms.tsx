@@ -1,13 +1,13 @@
 import { ASSETS } from "../../assets/assets";
-import AdminRoomsBooking from "@/components/AdminComponents/AdminRooms";
-import { BookingForm } from "@/components/BookingForm";
-import RoomCard from "@/components/room-card";
+import AdminRoomsBooking from "@web/components/AdminComponents/AdminRooms";
+import { BookingForm } from "@web/components/BookingForm";
+import RoomCard from "@web/components/room-card";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "@web/components/ui/dialog";
 import { useAuth } from "../../contexts/AuthContext";
 import { apiGetRooms, type Room } from "../../service/bookings";
 import { format } from "date-fns";

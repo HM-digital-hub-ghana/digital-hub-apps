@@ -1,12 +1,12 @@
 import { Search, Funnel, CircleCheckBig, CircleX } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import VisitorRequestForm from "@/components/VisitorRequestForm";
-import { Button } from "@/components/ui/button";
-import { EmptyState } from "@/components/empty-state";
-import type { Visitor, TableHeader } from "@/components/visitor-table";
-import { VisitorsTable } from "@/components/visitor-table";
+import { Input } from "@web/components/ui/input";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@web/components/ui/dialog";
+import VisitorRequestForm from "@web/components/VisitorRequestForm";
+import { Button } from "@web/components/ui/button";
+import { EmptyState } from "@web/components/empty-state";
+import type { Visitor, TableHeader } from "@web/components/visitor-table";
+import { VisitorsTable } from "@web/components/visitor-table";
 import { 
   apiGetPendingVisits, 
   apiApproveVisit, 
@@ -17,7 +17,7 @@ import {
   type PendingVisit,
   type VisitorWithVisits,
   type Visit
-} from "@/service/visitors";
+} from "@web/conference-and-visitors-booking/service/visitors";
 import toast from "react-hot-toast";
 import { Loader2, LogIn, LogOut } from "lucide-react";
 import { handleApiError } from "@/lib/utils";

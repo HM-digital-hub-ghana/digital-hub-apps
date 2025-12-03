@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { StatsCard } from "@/components/status-card";
-import { useAuth } from "@/contexts/AuthContext";
+import { StatsCard } from "@web/components/status-card";
+import { useAuth } from "@web/conference-and-visitors-booking/contexts/AuthContext";
 import {
   Users,
   DoorClosed,
@@ -24,22 +24,22 @@ import {
   CardHeader,
   CardTitle,
   CardContent,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+} from "@web/components/ui/card";
+import { Separator } from "@web/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { BookingForm } from "@/components/BookingForm";
-import VisitorRequestForm from "@/components/VisitorRequestForm";
+import { BookingForm } from "@web/components/BookingForm";
+import VisitorRequestForm from "@web/components/VisitorRequestForm";
 import {
   Dialog,
   DialogContent,
   DialogTitle,
   DialogDescription,
-} from "@/components/ui/dialog";
+} from "@web/components/ui/dialog";
 import AdminDashboard from "../admin/admin-dashboard";
-import { EmptyState } from "@/components/empty-state";
-import { apiGetUserProfile } from "@/service/user";
-import { apiGetAllBookings, apiGetRooms } from "@/service/bookings";
-import { apiGetAllVisitors } from "@/service/visitors";
+import { EmptyState } from "@web/components/empty-state";
+import { apiGetUserProfile } from "@web/conference-and-visitors-booking/service/user";
+import { apiGetAllBookings, apiGetRooms } from "@web/conference-and-visitors-booking/service/bookings";
+import { apiGetAllVisitors } from "@web/conference-and-visitors-booking/service/visitors";
 import {
   getHoursScheduledToday,
   getMeetingsToday,
@@ -49,8 +49,8 @@ import {
   getUpcomingVisitorsToday,
 } from "@/lib/dashboard-utils";
 
-import { getActivityFeed, formatTimeAgo, formatDate, type ActivityItem } from "@/service/activity";
-import { Button } from '@/components/ui/button';
+import { getActivityFeed, formatTimeAgo, formatDate, type ActivityItem } from "@web/conference-and-visitors-booking/service/activity";
+import { Button } from '@web/components/ui/button';
 
 // --- upcomings component ---
 interface MeetingItemProps {

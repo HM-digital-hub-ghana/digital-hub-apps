@@ -1,4 +1,4 @@
-import { BookingForm } from "@/components/BookingForm"
+import { BookingForm } from "@web/components/BookingForm"
 
 export default function BookingFormDemo() {
   const handleSubmit = (data: any) => {
