@@ -39,7 +39,7 @@ export function NavUser({ user }: { user: { name: string; email: string; avatar:
   function handleLogout() {
     console.log("[NavUser] Logout button clicked");
     try {
-      logout({ redirectTo: "/login", navigate });
+      logout({ redirectTo: "/conference-booking", navigate });
     } catch (err) {
       console.warn("[NavUser] Context logout failed, using fallback.", err);
       try {
@@ -47,7 +47,7 @@ export function NavUser({ user }: { user: { name: string; email: string; avatar:
         localStorage.removeItem("access_token");
         localStorage.removeItem("user");
       } finally {
-        navigate("/login");
+        navigate("/conference-booking");
       }
     }
   }
