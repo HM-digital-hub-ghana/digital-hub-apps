@@ -1,10 +1,15 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default function ConferenceBookingDashboard() {
+type PlaceholderScreenProps = {
+  title: string;
+  subtitle: string;
+};
+
+export function PlaceholderScreen({ title, subtitle }: PlaceholderScreenProps) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Dashboard</Text>
-      <Text style={styles.subtitle}>Conference Booking Dashboard - Coming soon...</Text>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
     </View>
   );
 }
@@ -26,8 +31,8 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     color: '#666',
+    textAlign: 'center',
   },
 });
-
 
 

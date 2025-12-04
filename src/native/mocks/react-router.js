@@ -1,3 +1,21 @@
+// Minimal mock of react-router for React Native / Expo.
+// This is only used on native to keep web routing code from breaking Metro.
+
+const React = require('react');
+
+function Identity({ children }) {
+  return React.createElement(React.Fragment, null, children);
+}
+
+module.exports = {
+  Routes: Identity,
+  Route: Identity,
+  Outlet: Identity,
+  useNavigate: () => () => {},
+  useLocation: () => ({ pathname: '/', search: '', hash: '', state: null, key: 'mock' }),
+  useParams: () => ({}),
+};
+
 /**
  * Native mock for react-router
  * Prevents errors when web-only routing code is analyzed during native builds
@@ -40,4 +58,5 @@ module.exports = {
 
 // Default export
 module.exports.default = module.exports;
+
 

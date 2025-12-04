@@ -1,6 +1,6 @@
-import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const projects = [
   {
@@ -8,7 +8,7 @@ const projects = [
     title: 'Smartspace',
     description: 'Conference Room & Visitor Booking System',
     icon: 'calendar-outline' as keyof typeof Ionicons.glyphMap,
-    path: '/conference-booking',
+    path: '/conference-booking/splash',
     enabled: true,
   },
   {
@@ -58,11 +58,17 @@ export default function HomeScreen() {
               disabled={!project.enabled}
               activeOpacity={project.enabled ? 0.7 : 1}
             >
-              <View style={[
-                styles.iconContainer,
-                !project.enabled && styles.iconContainerDisabled,
-              ]}>
-                <Ionicons name={project.icon} size={32} color={project.enabled ? '#007AFF' : '#999'} />
+              <View
+                style={[
+                  styles.iconContainer,
+                  !project.enabled && styles.iconContainerDisabled,
+                ]}
+              >
+                <Ionicons
+                  name={project.icon}
+                  size={32}
+                  color={project.enabled ? '#004E2B' : '#999'}
+                />
               </View>
               <Text style={[
                 styles.projectTitle,
@@ -98,7 +104,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#F0FFF4', // soft green tint
   },
   contentContainer: {
     padding: 20,
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#1A1A1A',
+    color: '#004E2B',
     marginBottom: 8,
   },
   subtitle: {
@@ -147,7 +153,7 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     borderRadius: 32,
-    backgroundColor: '#E3F2FD',
+    backgroundColor: '#E6F4EA',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 16,
@@ -176,7 +182,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
-    backgroundColor: '#007AFF',
+    backgroundColor: '#004E2B',
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 8,

@@ -3,10 +3,9 @@ import { Stack } from 'expo-router';
 export default function ConferenceBookingLayout() {
   return (
     <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="sign-up" options={{ headerShown: false }} />
-      <Stack.Screen name="reset-password" options={{ headerShown: false }} />
-      <Stack.Screen name="forgot-password" options={{ headerShown: false }} />
+      <Stack.Screen name="splash" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="dashboard" options={{ headerShown: false }} />
       <Stack.Screen name="room-booking" options={{ headerShown: false }} />
       <Stack.Screen name="bookings-calendar" options={{ headerShown: false }} />
@@ -19,4 +18,5 @@ export default function ConferenceBookingLayout() {
     </Stack>
   );
 }
+
 
