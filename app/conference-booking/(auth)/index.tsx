@@ -1,5 +1,5 @@
-import { useRouter } from 'expo-router';
-import { useState } from 'react';
+import { useRouter } from "expo-router";
+import { useState } from "react";
 import {
   Image,
   StyleSheet,
@@ -7,25 +7,28 @@ import {
   TextInput,
   TouchableOpacity,
   View,
-} from 'react-native';
+} from "react-native";
 
-import { colors } from '../theme/_colors';
+import { colors } from "../theme/_colors";
 
-const LOGO = require('../../../assets/images/smartspace-logo.png');
+const LOGO = require("../../../assets/images/smartspace-logo.png");
 
 export default function ConferenceBookingLogin() {
   const router = useRouter();
-  const [staffId, setStaffId] = useState('');
-  const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
+  const [staffId, setStaffId] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = () => {
     // For now, just navigate to the authenticated tabs; auth wiring can be added later.
-    router.replace('/conference-booking/(tabs)/home');
+    router.replace("/conference-booking/(tabs)/home");
+  };
+
+  const handleCreateAccount = () => {
+    router.push("/conference-booking/(auth)/sign-up");
   };
 
   const handleForgotPassword = () => {
-    router.push('/conference-booking/(auth)/forgot-password');
+    router.push("/conference-booking/(auth)/forgot-password");
   };
 
   return (
@@ -62,13 +65,8 @@ export default function ConferenceBookingLogin() {
         </View>
 
         <View style={styles.row}>
-          <TouchableOpacity
-            style={styles.rememberMeContainer}
-            activeOpacity={0.7}
-            onPress={() => setRememberMe((v) => !v)}
-          >
-            <View style={[styles.checkbox, rememberMe && styles.checkboxChecked]} />
-            <Text style={styles.rememberMeText}>Remember me</Text>
+          <TouchableOpacity onPress={handleCreateAccount} activeOpacity={0.7}>
+            <Text style={styles.forgotPasswordText}>Create an Account</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={handleForgotPassword} activeOpacity={0.7}>
@@ -93,17 +91,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
     paddingHorizontal: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   content: {
-    width: '100%',
+    width: "100%",
     maxWidth: 420,
   },
   logo: {
     width: 200,
     height: 44,
-    alignSelf: 'center',
+    alignSelf: "center",
     marginBottom: 56,
   },
   formHeader: {
@@ -111,7 +109,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: '700',
+    fontWeight: "700",
     color: colors.foreground,
     marginBottom: 8,
   },
@@ -124,38 +122,38 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
     color: colors.foreground,
     marginBottom: 8,
   },
   input: {
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#E5E7EB',
+    borderColor: "#E5E7EB",
     paddingHorizontal: 14,
     paddingVertical: 12,
     fontSize: 14,
     color: colors.foreground,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: "#F9FAFB",
   },
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     marginBottom: 32,
   },
   rememberMeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   checkbox: {
     width: 16,
     height: 16,
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: '#D1D5DB',
+    borderColor: "#D1D5DB",
     marginRight: 8,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
   },
   checkboxChecked: {
     backgroundColor: colors.primary,
@@ -168,20 +166,18 @@ const styles = StyleSheet.create({
   forgotPasswordText: {
     fontSize: 12,
     color: colors.primary,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   loginButton: {
     marginTop: 8,
     borderRadius: 999,
     backgroundColor: colors.primary,
     paddingVertical: 14,
-    alignItems: 'center',
+    alignItems: "center",
   },
   loginButtonText: {
     color: colors.primaryForeground,
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });
-
-
