@@ -1,7 +1,8 @@
-import { View, Text, StyleSheet,Image, TextInput, TouchableOpacity, } from 'react-native';
-import { colors } from "../theme/_colors";
-import { useState } from 'react';
+import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import { useState } from 'react';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
+import { colors } from "../theme/_colors";
 
 
 
@@ -10,7 +11,7 @@ export default function ConferenceBookingSignUp() {
   const router = useRouter();
     const [staffId, setStaffId] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [agreeTerms, setAgreeTerms] = useState(false);
   const handleSignUp = () => {
     // For now, just navigate to the authenticated tabs; auth wiring can be added later.
       // router.replace("/conference-booking/(tabs)/index  ");
@@ -48,15 +49,39 @@ export default function ConferenceBookingSignUp() {
   />
 </View>
 
+
+
+
+<View style={styles.checkboxContainer}>
+
+  <TouchableOpacity onPress={() => setAgreeTerms(!agreeTerms)}>
+    <View style={[styles.checkbox, agreeTerms && styles.checkboxChecked]}>
+      {agreeTerms && (
+        <Ionicons name="checkmark" size={12} color="#FFFFFF" />
+      )}
+    </View>
+  </TouchableOpacity>
+
+  <Text style={{ marginLeft: 10 }}>
+    I agree to the{" "}
+    <Text style={{ color: colors.primary }} onPress={() => console.log("Open terms page")}>
+      Terms and Conditions
+    </Text>
+  </Text>
+
+</View>
+
+<TouchableOpacity style ={styles.signUpButton} onPress={handleSignUp} >
+  <Text style ={styles.signUpButtonText} >Sign Up</Text></TouchableOpacity> 
+  
+  
 <TouchableOpacity onPress={handleSignUp}>
   <Text>
     Already have an account{' '}
     <Text style={{ color: colors.primary }}>login</Text>
   </Text>
-</TouchableOpacity>  
-<TouchableOpacity style ={styles.signUpButton} onPress={handleSignUp} >
-  <Text style ={styles.signUpButtonText} >Sign Up</Text></TouchableOpacity> 
 
+</TouchableOpacity>
    </View>
     </View>
   );
@@ -126,6 +151,27 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     paddingVertical: 14,
     alignItems: "center",
+    marginBottom: 24,
+  },
+  checkboxContainer: {
+  flexDirection: "row",
+  alignItems: "center",
+  marginBottom: 16,
+},
+checkbox: {
+    width: 16,
+    height: 16,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: "#D1D5DB",
+    marginRight: 8,
+    backgroundColor: "#FFFFFF",
+    
+  },
+
+  checkboxChecked: {
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
   },
 });
 
