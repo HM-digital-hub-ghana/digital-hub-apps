@@ -5,7 +5,6 @@
     "jsx": "react-native",
     "module": "ESNext",
     "baseUrl": ".",
-    "ignoreDeprecations": "6.0",
     "paths": {
       "src/*": ["src/*"],
       "@/*": ["./*"],

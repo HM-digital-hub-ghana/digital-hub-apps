@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Card } from "@web/components/ui/card";
 import { Button } from "@web/components/ui/button";
-import { Calendar, Clock, MessageSquare, ArrowRight } from "lucide-react";
+import { Card } from "@web/components/ui/card";
+import { ArrowRight, Calendar, Clock, MessageSquare } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const projects = [
   {

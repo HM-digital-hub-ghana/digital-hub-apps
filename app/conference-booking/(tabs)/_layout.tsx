@@ -13,7 +13,7 @@ export default function ConferenceTabsLayout() {
         tabBarStyle: {
           backgroundColor: '#FFFFFF',
           borderTopColor: '#E5E7EB',
-          height: 64,
+          height: 75,
           paddingBottom: 8,
           paddingTop: 6,
         },
@@ -26,8 +26,12 @@ export default function ConferenceTabsLayout() {
         name="home"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? 'home' : 'home-outline'}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -35,8 +39,12 @@ export default function ConferenceTabsLayout() {
         name="booking"
         options={{
           title: 'Booking',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="calendar-outline" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? 'calendar' : 'calendar-clear-outline'}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -44,8 +52,12 @@ export default function ConferenceTabsLayout() {
         name="visitors"
         options={{
           title: 'Visitors',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="people-outline" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? 'people' : 'people-outline'}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -53,8 +65,12 @@ export default function ConferenceTabsLayout() {
         name="settings"
         options={{
           title: 'Settings',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="settings-outline" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? 'settings' : 'settings-outline'}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
